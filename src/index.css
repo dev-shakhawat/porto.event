@@ -10,9 +10,9 @@
 
 
   /* colors */
-  --color-brand: #FDD55C;
-  --color-primary: #1E1E1E;  
-  --color-secondery: #727C93;
+  --color-brand: #43A6A3;
+  --color-primary: #212529;  
+  --color-secondery: #777777;
 
   /* container breakpoints */
   /* --breakpoint-8xl: 96rem; */
@@ -29,6 +29,21 @@
   --breakpoint-sx: 20rem;
   --breakpoint-2sx: 18rem;
   --breakpoint-3sx: 16rem;
+
+
+
+
+  /* animation */
+  --animate-animateEvent: animateEvent 5s infinite;
+  @keyframes animateEvent {
+    0% {
+        stroke-dasharray: 0 80%;
+   }
+    100% {
+        stroke-dasharray: 10% 0%;
+        stroke-dashoffset: 25%;
+   }
+}
 }
 @utility container {
   margin-inline: auto;
@@ -40,7 +55,13 @@
 *{
   @apply font-Poppins
 }
+body{
+  @apply overflow-x-hidden relative
+}
 
-.cmnHead{
-  @apply self-stretch mb-4 text-2xl font-extrabold tracking-tighter leading-10 uppercase text-primary max-sm:text-xl max-sm:leading-8
+.cmnBtn{
+  @apply px-12 py-4 text-sm font-bold text-white bg-brand border border-brand rounded-[35px] transition-colors duration-300
+}
+.bnrAminate{
+  @apply 3xl:text-[4.5rem] font-black uppercase tracking-[8px] fill-transparent stroke-white stroke-[2px] w-full animate-animateEvent
 }
